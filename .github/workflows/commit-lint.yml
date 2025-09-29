@@ -8,11 +8,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
             - name: Commit Lint
               id: commitlint
               uses: wagoid/commitlint-github-action@v4
               with:
                   configFile: .github/commitlint.config.js
+                  firstParent: false
               continue-on-error: true
             - name: Custom Failure Message
               if: steps.commitlint.outcome != 'success'
