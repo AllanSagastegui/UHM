@@ -9,7 +9,7 @@ include(
     "eureka-service",
     "gateway-service",
     "notification-service",
-    "pharmacy-service"
-    //"reports-service",
+    "pharmacy-service",
+    "reports-service",
     //user-service"
 )
