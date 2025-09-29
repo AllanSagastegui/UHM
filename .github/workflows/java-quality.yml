@@ -20,19 +20,12 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v2
 
       - name: Run Spotless Check
         if: ${{ hashFiles('**/*.java') != '' }}
-        run: ./gradlew spotlessCheck --no-daemon
+        run: gradle spotlessCheck --no-daemon
 
   lint:
     name: Java Lint Analysis
@@ -47,16 +40,9 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v2
 
       - name: Run Checkstyle
         if: ${{ hashFiles('**/*.java') != '' }}
-        run: ./gradlew checkstyleMain checkstyleTest --no-daemon
+        run: gradle checkstyleMain checkstyleTest --no-daemon
