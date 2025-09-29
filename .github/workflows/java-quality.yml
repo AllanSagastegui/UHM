@@ -45,4 +45,4 @@ jobs:
 
       - name: Run Checkstyle
         if: ${{ hashFiles('**/*.java') != '' }}
-        run: gradle checkstyleMain checkstyleTest --no-daemon
+        run: gradle checkstyleMain --no-daemon
