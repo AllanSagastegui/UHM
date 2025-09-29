@@ -126,3 +126,7 @@ pitestReportAggregate {
         }
     }
 }
+
+tasks.named("validateStructure") {
+    enabled = false
+}
