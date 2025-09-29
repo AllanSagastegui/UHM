@@ -8,8 +8,8 @@ include(
     "billing-service",
     "eureka-service",
     "gateway-service",
-    "notification-service"
-    //"pharmacy-service",
+    "notification-service",
+    "pharmacy-service"
     //"reports-service",
     //user-service"
 )
