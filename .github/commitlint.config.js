@@ -20,6 +20,7 @@ module.exports = {
         'docs'
       ]
     ],
+    'scope-empty': [0],
     'subject-case': [2, 'always', 'sentence-case'],
     'subject-max-length': [2, 'always', 72],
   },
