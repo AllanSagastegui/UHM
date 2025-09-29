@@ -13,8 +13,6 @@ jobs:
               uses: wagoid/commitlint-github-action@v4
               with:
                   configFile: .github/commitlint.config.js
-                  failOnError: true
-                  verbose: true
               continue-on-error: true
             - name: Custom Failure Message
               if: steps.commitlint.outcome != 'success'
