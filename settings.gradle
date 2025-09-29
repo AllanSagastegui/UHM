@@ -11,5 +11,5 @@ include(
     "notification-service",
     "pharmacy-service",
     "reports-service",
-    //user-service"
+    "user-service"
 )
