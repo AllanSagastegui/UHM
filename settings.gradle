@@ -6,10 +6,10 @@ include(
     "audit-service",
     "auth-service",
     "billing-service",
-    "eureka-service"
+    "eureka-service",
+    "gateway-service"
     //user-service",
     //"reports-service",
     //"notification-service",
     //"pharmacy-service",
-    //"gateway-service",
 )
