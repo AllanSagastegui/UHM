@@ -9,5 +9,7 @@ include(
     "analytics-service",
     "audit-service",
     "pharmacy-service",
-    "billing-service"
+    "billing-service",
+    "gateway-service",
+    "eureka-service",
 )
