@@ -5,11 +5,11 @@ include(
     "appointments-service",
     "audit-service",
     "auth-service",
-    "billing-service"
+    "billing-service",
+    "eureka-service"
     //user-service",
     //"reports-service",
     //"notification-service",
     //"pharmacy-service",
     //"gateway-service",
-    //"eureka-service",
 )
