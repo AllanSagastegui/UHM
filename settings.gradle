@@ -2,12 +2,12 @@ rootProject.name = "backend-UHM"
 
 include(
     "analytics-service",
-    "appointments-service"
+    "appointments-service",
+    "audit-service"
     //"auth-service",
     //user-service",
     //"reports-service",
     //"notification-service",
-    //"audit-service",
     //"pharmacy-service",
     //"billing-service",
     //"gateway-service",
