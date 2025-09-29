@@ -1,0 +1,13 @@
+rootProject.name = "backend-UHM"
+
+include(
+    "auth-service",
+    "user-service",
+    "appointments-service",
+    "reports-service",
+    "notification-service",
+    "analytics-service",
+    "audit-service",
+    "pharmacy-service",
+    "billing-service"
+)

@@ -1,0 +1,33 @@
+name: Commit Lint
+on:
+    push:
+        branches:
+            [main]
+jobs:
+    commit-lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Commit Lint
+              id: commitlint
+              uses: wagoid/commitlint-github-action@v4
+              with:
+                  configFile: .github/commitlint.config.js
+                  failOnError: true
+                  verbose: true
+              continue-on-error: true
+            - name: Custom Failure Message
+              if: steps.commitlint.outcome != 'success'
+              run: |
+                echo "Los mensajes de commit no cumplen con la convención establecida."
+                echo ""
+                echo "Formato esperado:"
+                echo "   <type>(<scope>): <subject>"
+                echo ""
+                echo "Ejemplos válidos:"
+                echo "   feat(auth): add Google Sign-In"
+                echo "   fix(api): prevent crash on null response"
+                echo "   refactor(db): optimize queries"
+                echo ""
+                echo "Tipos permitidos: feat, fix, style, refactor, perf, test, chore, ci, workflow, types, wip, revert, docs"
+                exit 1

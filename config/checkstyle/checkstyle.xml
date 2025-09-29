@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <!-- Charset -->
+    <property name="charset" value="UTF-8"/>
+
+    <!-- Reporte en consola -->
+    <property name="severity" value="error"/>
+
+    <!-- Máxima longitud de línea -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^package.*|^import.*"/>
+    </module>
+
+    <!-- Indentación básica -->
+    <module name="TreeWalker">
+        <!-- Nombres de clases -->
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Nombres de métodos -->
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Nombres de variables -->
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Nombres de constantes -->
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
+        </module>
+
+        <!-- JavaDoc obligatorio en clases públicas -->
+        <module name="JavadocType">
+            <property name="scope" value="public"/>
+        </module>
+
+        <!-- Importaciones ordenadas -->
+        <module name="ImportOrder">
+            <property name="option" value="top"/>
+            <property name="groups" value="java,javax,org,com"/>
+            <property name="ordered" value="true"/>
+            <property name="separated" value="true"/>
+        </module>
+
+        <!-- Evitar imports estáticos con * -->
+        <module name="AvoidStaticImport">
+            <property name="excludes" value="org.junit.Assert.*"/>
+        </module>
+
+        <!-- Llaves en la misma línea -->
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+
+        <!-- Espacios -->
+        <module name="WhitespaceAround"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="NoWhitespaceAfter"/>
+
+        <!-- No clases anónimas muy grandes -->
+        <module name="AnonInnerLength">
+            <property name="max" value="40"/>
+        </module>
+    </module>
+</module>

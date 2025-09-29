@@ -1,0 +1,66 @@
+### IDEs ###
+# VS Code
+.vscode/
+.history/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+### OS files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+### Gradle ###
+.gradle/
+**/build/
+**/out/
+**/bin/
+**/.gradletasknamecache
+
+# Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+!**/gradle/wrapper/gradle-wrapper.properties
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+
+### Logs ###
+*.log
+logs/
+**/test-results/
+**/surefire-reports/
+**/jacoco/
+**/coverage/
+
+### Env / Config ###
+*.env
+.env.*
+local.properties
+*.local
+*.secret
+/secrets/
+
+# Keep an example file
+!env.example
+
+### Docker ###
+*.pid
+*.seed
+**/docker-compose.override.yml
+
+### Misc ###
+*.swp
+*.swo
