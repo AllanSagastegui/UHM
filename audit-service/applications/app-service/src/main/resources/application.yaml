@@ -1,14 +1,45 @@
-##Spring Configuration
 server:
-  port: 8080
+  port: 8090
 spring:
   application:
-    name: audit-service
+    name: "audit-service"
   devtools:
     add-properties: false
   h2:
     console:
       enabled: true
-      path: /h2
+      path: "/h2"
   profiles:
-    include:
+    active: docker
+  kafka:
+    consumer:
+      bootstrap-servers: "${AUDIT_BOOTSTRAP_SERVERS}"
+      group-id: "${AUDIT_GROUP_ID}"
+      auto-offset-reset: "earliest"
+      key-deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      value-deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+    properties:
+      max.poll.records: 100
+      fetch.min.bytes: 500
+adapters:
+  elasticsearch:
+    host: "${AUDIT_DB_HOST}"
+  kafka:
+    consumer:
+      topic: "${AUDIT_TOPIC}"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+cors:
+  allowed-origins: "http://localhost:4200,http://localhost:8080"
+springdoc:
+  api-docs:
+    path: "/v3/api-docs"
+  swagger-ui:
+    path: "/swagger-doc"
